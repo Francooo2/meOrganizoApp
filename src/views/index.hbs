@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Licorice&family=Luxurious+Roman&family=Oswald:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>meOrganizo app</title>
+</head>
+
+<body>
+
+    <header class="header">
+        <div>
+            <a class="header__logo" href="/">meOrganizoApp</a>
+        </div>
+        <nav id="menu" class="header__nav">
+            <ul class="header__list">
+                <li class="listitem"><a href="/">Inicio</a></li>
+                {{#if user}}
+                <li class="listitem"><a href="/profile">Perfil</a></li>
+                <li class="listitem"><a href="/auth/logout">Cerrar Sesión</a></li>
+                {{else}}
+                <li class="listitem"><a href="/login">Iniciar Sesión</a></li>
+                <li class="listitem"><a href="/register">Registro</a></li>
+                {{/if}}
+            </ul>
+        </nav>
+        <div class="header__btn">
+            <i id="btn" class="fas fa-bars fa-2x"></i>
+        </div>
+    </header>
+
+    <main class="main mainImage">
+            <article class="home main__home">
+                <p class="home__paragraph">Organiza tus actividades de manera eficiente desde ya!</p>
+                <a class="home__button home__buttondimensions_principal" href="/register">Empezar</a>
+            </article>
+    </main>
+
+    <footer class="footer">2022</footer>
+
+    <script src="/js/script.js"></script>
+</body>
+
+</html>
