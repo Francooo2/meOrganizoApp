@@ -40,20 +40,41 @@
 
         <article class="home">
 
-            <form class="home__generalelement home__form" action="/auth/register" method="POST">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name">
+            <form class="home__generalelement home__form" action="/auth/register" method="POST" id="formRegister">
 
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email">
+                <label for="registerName">Nombre</label>
+                <div class="home__formgroup">
+                    <input type="text" id="registerName" name="name" required>
+                    <span id="iconRegisterName" class="home__formicon"><i class="fas fa-check-circle"></i></span>
+                </div>
+                <p class="home__formvalidate" id="validRegisterName"></p>
 
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password">
 
-                <label for="passwordConfirm">Confirm Password</label>
-                <input type="password" id="passwordConfirm" name="passwordConfirm">
+                <label for="registerEmail">Correo</label>
+                <div class="home__formgroup">
+                    <input type="email" id="registerEmail" name="email" required>
+                    <span id="iconRegisterEmail" class="home__formicon"><i class="fas fa-check-circle"></i></span>
+                </div>
+                <p class="home__formvalidate" id="validRegisterEmail"></p>
 
-                <button type="submit" class="home__button home__buttondimensions_secondary">Register User</button>
+
+                <label for="registerPassword">Contraseña</label>
+                <div class="home__formgroup">
+                    <input type="password" id="registerPassword" name="password" required>
+                    <span id="iconRegisterPassword" class="home__formicon"><i class="fas fa-check-circle"></i></span>
+                </div>
+                <p class="home__formvalidate" id="ruleone"></p>
+                <p class="home__formvalidate" id="ruletwo"></p>
+                <p class="home__formvalidate" id="rulethree"></p>
+
+                <label for="passwordConfirm">Confirmar contraseña</label>
+                <div class="home__formgroup">
+                    <input type="password" id="passwordConfirm" name="passwordConfirm" required>
+                    <span id="iconRegisterPasswordConfirm" class="home__formicon"><i class="fas fa-check-circle"></i></span>
+                </div>
+                <p class="home__formvalidate" id="validPass"></p>
+
+                <button type="submit" id="btnregister" class="home__button home__buttondimensions_secondary">Registrar Usuario</button>
             </form>
         </article>
 
@@ -67,7 +88,9 @@
         2022
     </footer>
 
-    <script src="/js/script.js"></script>
+    <script type="module" src="/js/register.js"></script>
+    <script type="module" src="/js/functions.js"></script>
+    <script type="module" src="/js/nav.js"></script>
 </body>
 
 </html>

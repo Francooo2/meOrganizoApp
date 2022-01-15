@@ -140,6 +140,9 @@ a {
     padding-top    : 1.5em;
     padding-bottom : 1.5em;
 }
+.home__img {
+    width: 55%;
+}
 .footer {
     font-family     : 'Oswald', sans-serif;
     font-weight     : 500;
@@ -149,16 +152,29 @@ a {
     text-align      : center;
     background-color: var(--secondary-color);
 }
+.home__formgroup {
+    width: 100%;
+}
+.home__formicon {
+    display: none;
+    color: red;
+}
 input {
     margin       : 0.5em;
     padding      : 0.3em;
     border-radius: 10px;
     border       : none;
     font-family  : 'Luxurious Roman', cursive;
+    width        : 45%;
 }
 input:focus {
     background-color: var(--secondary-color);
 } 
+.home__formvalidate {
+    font-size: 0.8rem;
+    padding  : 0.1em;
+    color    : red;
+}
 
 @media (max-width: 1055px) {
     .header__btn {
@@ -182,7 +198,7 @@ input:focus {
         margin: 0.3em 0;
     }
     .header__list {
-        text-align: left;
+        text-align     : left;
         display        : flex;
         flex-direction : column;
         justify-content: start;
@@ -190,8 +206,15 @@ input:focus {
     .header__nav.show {
         transform: translateX(-20px);
     }
+    .home__form {
+        width: 60%;
+    }
 }
 
-
+@media (max-width: 450px) {
+    .home__form {
+        width: 80%;
+    }
+}
 
 
