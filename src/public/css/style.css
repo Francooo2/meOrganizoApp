@@ -175,6 +175,40 @@ input:focus {
     padding  : 0.1em;
     color    : red;
 }
+.containerEmergentMessage {
+    position        : absolute;
+    bottom          : 1px;
+    display         : flex;
+    flex-direction  : column;
+    justify-content : center;
+    align-items     : center;
+    height          : 100%;
+    width           : 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.containerEmergentMessage__message {
+    display         : flex;
+    justify-content : space-around;
+    align-items     : center;
+    font-family     : 'Oswald', sans-serif;
+    font-size       : 1.5rem;
+    padding         : 0.5em;
+    border-radius   : 10px;
+    box-shadow      : 5px 10px 5px 0px rgba(0, 0, 0, 0.3);
+    background-color: var(--elements-color);
+    color           : #fff;
+    height          : 20%;
+    width           : 50%;
+}
+.containerEmergentMessage__icon {
+    cursor: pointer;
+}
+.containerEmergentMessage__icon:hover {
+    color: #222;    
+}
+.hide {
+    display: none;
+}
 
 @media (max-width: 1055px) {
     .header__btn {

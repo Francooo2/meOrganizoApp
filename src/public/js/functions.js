@@ -81,3 +81,12 @@ export function error(inputStatus, paragraph, icon, text, paragraph2, text2, tex
     }
 
 }
+
+export function exitMessage(idMessage, idParent) {
+    const icon   = document.getElementById(idMessage)
+    const parent = document.getElementById(idParent)
+
+    icon.addEventListener('click', (e) => {
+        parent.classList.toggle('hide')       
+    })
+}

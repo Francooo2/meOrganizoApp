@@ -37,33 +37,44 @@
 
     <main class="main specialbackground">
         <article class="home">
-        <form class="home__generalelement home__form" action="/auth/login" method="POST" id="formLogin">
+            <form class="home__generalelement home__form" action="/auth/login" method="POST" id="formLogin">
 
-            <label for="loginEmail">Correo</label>
-            <div class="home__formgroup">
-                <input type="email" id="loginEmail" name="email" required>
-                <span id="iconLoginEmail" class="home__formicon"><i class="fas fa-check-circle"></i></span>
-            </div>
-            <p class="home__formvalidate" id="validLoginEmail"></p>
-        
-            <label for="loginPassword">Contraseña</label>
-            <div class="home__formgroup">
-                <input type="password" id="loginPassword" name="password" required>
-                <span id="iconLoginPassword" class="home__formicon"><i class="fas fa-check-circle"></i></span>
-            </div>
-            <p class="home__formvalidate" id="ruleLoginOne"></p>
-            <p class="home__formvalidate" id="ruleLoginTwo"></p>
-            <p class="home__formvalidate" id="ruleLoginThree"></p>
+                <label for="loginEmail">Correo</label>
+                <div class="home__formgroup">
+                    <input type="email" id="loginEmail" name="email" required>
+                    <span id="iconLoginEmail" class="home__formicon"><i class="fas fa-check-circle"></i></span>
+                </div>
+                <p class="home__formvalidate" id="validLoginEmail"></p>
+
+                <label for="loginPassword">Contraseña</label>
+                <div class="home__formgroup">
+                    <input type="password" id="loginPassword" name="password" required>
+                    <span id="iconLoginPassword" class="home__formicon"><i class="fas fa-check-circle"></i></span>
+                </div>
+                <p class="home__formvalidate" id="ruleLoginOne"></p>
+                <p class="home__formvalidate" id="ruleLoginTwo"></p>
+                <p class="home__formvalidate" id="ruleLoginThree"></p>
 
 
-            <button type="submit" id="btnlogin" class="home__button home__buttondimensions_secondary">Login</button>
-        </form>
+                <button type="submit" id="btnlogin" class="home__button home__buttondimensions_secondary">Login</button>
+            </form>
 
         </article>
 
         {{#if message}}
-        <h4>{{message}}</h4>
+        <div id="parentMessageLogin" class="containerEmergentMessage">
+            <div class="containerEmergentMessage__message">
+                <p>{{message}}</p>
+                <i id="iconExit" class="fas fa-times containerEmergentMessage__icon"></i>
+            </div>
+        </div>
         {{/if}}
+
+        <div id="parentMessageLogin" class="containerEmergentMessage hide">
+            <div class="containerEmergentMessage__message">
+                <p id="alertMessageLogin"></p>
+                <i id="iconExit" class="fas fa-times containerEmergentMessage__icon"></i>
+            </div>
         </div>
 
     </main>

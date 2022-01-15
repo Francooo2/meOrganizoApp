@@ -79,8 +79,20 @@
         </article>
 
         {{#if message}}
-        <h4>{{message}}</h4>
+        <div id="parentMessageRegister" class="containerEmergentMessage">
+            <div class="containerEmergentMessage__message">
+                <p>{{message}}</p>
+                <i id="iconExit" class="fas fa-times containerEmergentMessage__icon"></i>
+            </div>
+        </div>
         {{/if}}
+
+        <div id="parentMessageRegister" class="containerEmergentMessage hide">
+            <div class="containerEmergentMessage__message">
+                <p id="alertMessageRegister"></p>
+                <i id="iconExit" class="fas fa-times containerEmergentMessage__icon"></i>
+            </div>
+        </div>
 
     </main>
 
