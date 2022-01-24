@@ -35,7 +35,6 @@ exports.login = async (req, res) => {
         })
 
     } catch (error) {
-        console.log(error)
         return res.status(500).render('index', {
             message: 'En este momento el servicio no esta disponible, favor intentarlo más tarde.'
         })
@@ -54,7 +53,7 @@ exports.register = async (req, res) => {
 
     await pool.query('SELECT email FROM users WHERE email = ?', [email], async (error, results) => {
         if (error) {
-            console.log(error)
+            return res.status(500).render('error')
         }
         if (results.length > 0) {
             return res.render('register', {
@@ -72,7 +71,7 @@ exports.register = async (req, res) => {
             .then((hashedPassword) => {
                 pool.query('INSERT INTO users SET ?', { name: name, email: email, password: hashedPassword }, (error, results) => {
                     if (error) {
-                        console.log(error)
+                        return res.status(500).render('error')
                     } else {
                         return res.render('register', {
                             message: 'Usuario registrado'
@@ -100,7 +99,6 @@ exports.isLoggedIn = async (req, res, next) => {
                 return next()
             })
         } catch (error) {
-            console.log(error)
             return next()
         }
     } else {
@@ -113,6 +111,5 @@ exports.logout = async (req, res) => {
         expires: new Date(Date.now()),
         httpOnly: true
     })
-
     res.status(200).redirect('/')
 }

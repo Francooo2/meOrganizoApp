@@ -10,10 +10,19 @@ export const inputsLoginStatus = {
 }
 
 export const inputsRegisterStatus = {
-    registerNameStatus: false,
-    registerEmailStatus: false,
+    registerNameStatus    : false,
+    registerEmailStatus   : false,
     registerPasswordStatus: false,
-    passwordConfirmStatus: false
+    passwordConfirmStatus : false
+}
+
+export function nav() {
+    const btn = document.getElementById('btn')
+    const menu = document.getElementById('menu')
+
+    btn.addEventListener("click", () => {
+        menu.classList.toggle('show')
+    })
 }
 
 export function validate(input, idParagraph, idIcon, expressionRegex, text1, text2, idParagraph2, idParagraph3, text3, text4) {
@@ -83,10 +92,42 @@ export function error(inputStatus, paragraph, icon, text, paragraph2, text2, tex
 }
 
 export function exitMessage(idMessage, idParent) {
-    const icon   = document.getElementById(idMessage)
+    const icon = document.getElementById(idMessage)
     const parent = document.getElementById(idParent)
 
     icon.addEventListener('click', (e) => {
-        parent.classList.toggle('hide')       
+        parent.classList.toggle('hide')
     })
+}
+
+export function statusChecks(checks) {
+    for (let i = 0; i < checks.length; i++) {
+        if (checks[i].parentElement.parentElement.childNodes[13].textContent === 'Terminado') {
+            checks[i].checked = 1
+        } else {
+            checks[i].checked = 0
+        }
+    }
+}
+
+export function colorsPriority(cellsPriority) {
+    for (let i = 0; i < cellsPriority.length; i++) {
+        if (cellsPriority[i].textContent === 'Alta') {
+            cellsPriority[i].style.backgroundColor = 'rgb(255, 74, 74)'
+        } else if (cellsPriority[i].textContent === 'Media') {
+            cellsPriority[i].style.backgroundColor = 'rgb(212, 212, 74)'
+        } else if (cellsPriority[i].textContent === 'Baja') {
+            cellsPriority[i].style.backgroundColor = 'lightgreen'
+        }
+    }
+}
+
+export function colorStatus(cellsStatus) {
+    for (let i = 0; i < cellsStatus.length; i++) {
+        if (cellsStatus[i].textContent === 'Pendiente') {
+            cellsStatus[i].style.backgroundColor = 'rgb(255, 74, 74)'
+        }  else if (cellsStatus[i].textContent === 'Terminado') {
+            cellsStatus[i].style.backgroundColor = 'lightgreen'
+        }
+    }
 }

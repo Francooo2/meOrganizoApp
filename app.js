@@ -19,8 +19,9 @@ app.use(express.static(path.join(__dirname, './src/public')));
 app.set('views',path.join(__dirname, 'src/views'))
 app.set('view engine', 'hbs');
 
-app.use('/', require('./src/routes/pages'));
-app.use('/auth', require('./src/routes/auth'));
+app.use('/', require('./src/routes/pages'))
+app.use('/module', require('./src/routes/crud'))
+app.use('/auth', require('./src/routes/auth'))
 
 app.listen(app.get('port'), () => {
  console.log(`Servidor corriendo en el puerto ${app.get('port')}`);

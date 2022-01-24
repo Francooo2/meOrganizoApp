@@ -1,4 +1,6 @@
-import { validate, inputsLoginStatus, exitMessage } from './functions.js'
+import { validate, inputsLoginStatus, exitMessage, nav } from './functions.js'
+
+nav()
 
 const btnLogin           = document.getElementById('btnlogin')
 const formLogin          = document.getElementById('formLogin')
@@ -12,7 +14,6 @@ validate(inputLoginPassword, 'ruleLoginOne', 'iconLoginPassword', 'password', 'E
 exitMessage('iconExit', 'parentMessageLogin')
 
 btnLogin.addEventListener('click', (e) => {
-    console.log(inputsLoginStatus)
     if(inputsLoginStatus.loginEmailStatus && inputsLoginStatus.loginPasswordStatus) {
         formLogin.submit()
     } else {

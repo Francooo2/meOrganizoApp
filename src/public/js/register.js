@@ -1,4 +1,6 @@
-import { validate, matchPassword, inputsRegisterStatus, exitMessage } from './functions.js'
+import { validate, matchPassword, inputsRegisterStatus, exitMessage, nav } from './functions.js'
+
+nav()
 
 const inputRegisterName          = document.getElementById('registerName')
 const inputRegisterEmail         = document.getElementById('registerEmail')

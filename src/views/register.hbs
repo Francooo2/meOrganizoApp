@@ -23,7 +23,7 @@
             <ul class="header__list">
                 <li class="listitem"><a href="/">Inicio</a></li>
                 {{#if user}}
-                <li class="listitem"><a href="/profile">Perfil</a></li>
+                <li class="listitem"><a href="/module/tasks/{{ user.id }}">Perfil</a></li>
                 <li class="listitem"><a href="/auth/logout">Cerrar Sesión</a></li>
                 {{else}}
                 <li class="listitem"><a href="/login">Iniciar Sesión</a></li>
@@ -101,8 +101,6 @@
     </footer>
 
     <script type="module" src="/js/register.js"></script>
-    <script type="module" src="/js/functions.js"></script>
-    <script type="module" src="/js/nav.js"></script>
 </body>
 
 </html>

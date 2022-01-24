@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    
+
     <header class="header">
         <div>
             <a class="header__logo" href="/">meOrganizoApp</a>
@@ -22,13 +22,8 @@
         <nav id="menu" class="header__nav">
             <ul class="header__list">
                 <li class="listitem"><a href="/">Inicio</a></li>
-                {{#if user}}
-                <li class="listitem"><a href="/profile">Perfil</a></li>
+                <li class="listitem"><a href="/module/tasks/{{ user.id }}">Perfil</a></li>
                 <li class="listitem"><a href="/auth/logout">Cerrar Sesión</a></li>
-                {{else}}
-                <li class="listitem"><a href="/login">Iniciar Sesión</a></li>
-                <li class="listitem"><a href="/register">Registro</a></li>
-                {{/if}}
             </ul>
         </nav>
         <div class="header__btn">
@@ -36,13 +31,95 @@
         </div>
     </header>
 
-     <main class="main specialbackground">
-            <p>Bienvenido {{ user.name }}</p>
+    <main class="mainprofile specialbackground">
+        <section class="left">
+            <p class="home__paragraph">Bienvenido {{ user.name }}</p>
+            <article class="left__clock">
+                <div class="left__datetop">
+                    <p id="dateone"></p>
+                </div>
+                <div class="left__datebottom">
+                    <p id="datetwo">h</p>
+                </div>
+            </article>
+            <article class="left__form home__generalelement">
+                <form action="/module/create/{{ user.id }}" method="POST" id="formtask" class="formtasks">
+                    <div class="left__taskform">
+                        <input type="text" id="task" name="task" placeholder="Ingresa una tarea" required>
+                    </div>
+                    <div class="left__taskform">
+                        <label for="date">Ingresa una fecha:</label>
+                        <input name="date" id="date" min="2021-01-28" type="datetime-local" required>
+                    </div>
+                    <div class="left__taskform">
+                        <label for="priority">Prioridad:</label>
+                        <select name="priority" id="priority">
+                            <option value="Alta">Alta</option>
+                            <option value="Media">Media</option>
+                            <option value="Baja">Baja</option>
+                        </select>
+                    </div>
+                    <div class="left__taskform">
+                        <button class="home__button left__button" id="btnTask" type="submit">Agregar</button>
+                        <button class="home__button left__button" id="btnOrder" type="button">Ordenar por Prioridad</button>
+                    </div>
+                </form>
+            </article>
+        </section>
+        <section class="right">
+            <article class="right__article">
+                <div class="right__blocktable">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Estado</th>
+                            <th>Prioridad</th>
+                            <th>Tarea</th>
+                            <th>Fecha Final</th>
+                            <th>Actualizar</th>
+                            <th>Eliminar</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody" class="tbody">
+                        {{#each data}}
+                        <tr>
+                            <td><input type="checkbox" class="check"></td>
+                            <td class="priority">{{priority}}</td>
+                            <td>{{task}}</td>
+                            <td>{{date_final}}</td>
+                            <td><a class="iconlink" href="/module/updatetask/{{id}}"><i class="far fa-edit icon_pointer"></i></a></td>
+                            <td><a href="/module/delete/{{id}}" class="iconlink"><i class="fas fa-times icon_pointer"></i></a></td>
+                            <td class="status">{{status}}</td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+                </div>
+            </article>
+        </section>
+
+        {{#if message}}
+        <div id="parentMessageRegister" class="containerEmergentMessage">
+            <div class="containerEmergentMessage__message">
+                <p>{{message}}</p>
+                <i id="iconExit" class="fas fa-times containerEmergentMessage__icon"></i>
+            </div>
+        </div>
+        {{/if}}
+
+        <div id="parentMessageRegister" class="containerEmergentMessage hide">
+            <div class="containerEmergentMessage__message">
+                <p id="alertMessageRegister"></p>
+                <i id="iconExit" class="fas fa-times containerEmergentMessage__icon"></i>
+            </div>
+        </div>
     </main>
 
-     <footer class="footer">2022</footer>
+    <footer class="footer">2022</footer>
 
-    <script type="module" src="/js/nav.js"></script>
+    <script type="module" src="/js/profile.js"></script>
+    <script type="module" src="/js/tasks.js"></script>
 </body>
 
 </html>
