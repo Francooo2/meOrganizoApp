@@ -1,8 +1,8 @@
-# Cobro de impuestos a clientes
+# Aplicación lista de tareas
 
-Proyecto de práctica, que permite aplicar un impuesto especifico a determinado cliente, según su monto bruto anual y deducciones.
+Proyecto de práctica, de lista de tareas con inicio de sesión y registro de usuarios.
 
-![Alt text](assets/img/profile.png?raw=true "Optional Title")
+![Perfil principal.](https://github.com/Francooo2/meOrganizoApp/blob/main/src/public/img/profile.png?raw=true "Perfil principal")
 
 
 ### Pre-requisitos 📋
@@ -10,7 +10,7 @@ Proyecto de práctica, que permite aplicar un impuesto especifico a determinado 
 Debes tener previamente instalado en tu equipo lo siguiente:
 
 ```
-Node.js, git
+Node.js, git, MySql, XAMPP
 ```
 
 ### Instalación 🔧
@@ -18,7 +18,7 @@ Node.js, git
 Clona el proyecto.
 
 ```
-git clone https://github.com/Francooo2/impuestos.git
+git clone https://github.com/Francooo2/meOrganizoApp.git
 ```
 
 Abre tu editor de preferencia, y por consola ejecuta lo siguiente para instalar dependencias del proyecto.
@@ -27,31 +27,40 @@ Abre tu editor de preferencia, y por consola ejecuta lo siguiente para instalar 
 npm i
 ```
 
+Ejecuta el script db.sql, que se encuantra en la carpeta database, en tu motor de base de datos de preferencia.
+
+Luego crea un archivo .env en el proyecto con la siguiente estructura.
+
+```
+DATABASE           = ...
+DATABASE_HOST      = ...
+DATABASE_USER      = ...
+DATABASE_PASSWORD  = ...
+JWT_SECRET         = ...
+JWT_EXPIRES_IN     = ...
+JWT_COOKIE_EXPIRES = ...
+```
+
 ## Ejecutando el proyecto ⚙️
 
-Para ejecutar el proyecto, luego de completar los pasos anteriores, ejecuta el siguiente comando por conasola.
+Para ejecutar el proyecto, luego de completar los pasos anteriores, ejecuta el siguiente comando por conasola, mientrasm tienes XAMPP corriendo.
 
 ```
 npm run start
 ```
-
-el comando anterior ejecuta automaticamente lo suiguiente desde package.json, la primera parte convierte el proyecto a ES5 y la segunta ejecuta el archivo main.js previamente convertido de la carpeta dist.
-
-```
-npx babel src/ -d dist/ && node dist/main.js
-```
-
 Una vez ejecutado npm run start, se debería ver la siguiente salida por consola.
 
 ```
-Successfully compiled 3 files with Babel (2511ms).
-El impuesto 1 de Javier es $ 226800
-El impuesto 3 de Javier es $ 172200
-El impuesto 4 de Francisca es $ 252000
-El impuesto 5 de Francisca es $ 181650
+Servidor corriendo en el puerto 5000
+DB is conected
 ```
 
-En caso de querer aplicar otros impuestos a los clientes se debe manipular el archivo main.js de la carpeta src, y posteriormente volver a ejecutar npm run start por consola.
+## Construido con 🛠️
+
+* [Node js](https://nodejs.org/es/) - Entorno de ejecución javascript para el backend.
+* [Express](https://expressjs.com/es/) - infraestructura de aplicaciones web Node.js.
+* [JWT](https://jwt.io/) - Método de autenticación.
+* [hbs](https://handlebarsjs.com/) - Motor de plantillas utilizado.
 
 ---
 ⌨️ Feliz código, [Franco](https://github.com/Francooo2) 😊
