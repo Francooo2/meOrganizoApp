@@ -41,8 +41,6 @@ for (let i = 0; i < checks.length; i++) {
                     credentials: 'same-origin',
                     headers: {
                         'Content-Type': 'application/json',
-                        'Content Security Policy directive': "default-src 'self'"
-
                     },
                     redirect: 'follow',
                     referrerPolicy: 'no-referrer',
@@ -65,8 +63,7 @@ for (let i = 0; i < checks.length; i++) {
                     cache: 'no-cache',
                     credentials: 'same-origin',
                     headers: {
-                        'Content-Type': 'application/json',
-                        'Content Security Policy directive': "default-src 'self'"
+                        'Content-Type': 'application/json'
                     },
                     redirect: 'follow',
                     referrerPolicy: 'no-referrer',
