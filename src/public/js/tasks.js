@@ -1,6 +1,12 @@
 import { nav, exitMessage, colorStatus, colorsPriority, statusChecks } from './functions.js'
 
+const cspMetaTag = document.createElement('meta')
+cspMetaTag.setAttribute('http-equiv', 'Content-Security-Policy')
+cspMetaTag.setAttribute('content', "connect-src 'self';")
+document.querySelector('head').appendChild(cspMetaTag)
+
 nav()
+
 exitMessage('iconExit', 'parentMessageRegister')
 
 const task           = document.getElementById('task')
@@ -42,7 +48,7 @@ for (let i = 0; i < checks.length; i++) {
                         'Content-Type': 'application/json'
                     },
                     redirect: 'follow',
-                    referrerPolicy: 'same-origin',
+                    referrerPolicy: 'no-referrer',
                 })
             }
 
@@ -65,7 +71,7 @@ for (let i = 0; i < checks.length; i++) {
                         'Content-Type': 'application/json'
                     },
                     redirect: 'follow',
-                    referrerPolicy: 'same-origin',
+                    referrerPolicy: 'no-referrer',
                 })
             }
         }
