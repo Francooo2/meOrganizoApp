@@ -32,7 +32,7 @@ for (let i = 0; i < checks.length; i++) {
             let idRegister = referenceUrl.substring(lastSlash + 1, referenceUrl.length)
             colorStatus(cellsStatus)
 
-            postDataOne(`http://localhost:5000/module/updatestatusone/${idRegister}`)
+            postDataOne(`https://www.meorganizo.digital/module/updatestatusone/${idRegister}`)
             async function postDataOne(url) {
                 const response = await fetch(url, {
                     method: 'POST',
@@ -55,7 +55,7 @@ for (let i = 0; i < checks.length; i++) {
             let idRegister = referenceUrl.substring(lastSlash + 1, referenceUrl.length)
             colorStatus(cellsStatus)
 
-            postDataTwo(`http://localhost:5000/module/updatestatustwo/${idRegister}`)
+            postDataTwo(`https://www.meorganizo.digital/module/updatestatustwo/${idRegister}`)
             async function postDataTwo(url) {
                 const response = await fetch(url, {
                     method: 'POST',
