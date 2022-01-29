@@ -1,10 +1,5 @@
 import { nav, exitMessage, colorStatus, colorsPriority, statusChecks } from './functions.js'
 
-const cspMetaTag = document.createElement('meta')
-cspMetaTag.setAttribute('http-equiv', 'Content-Security-Policy')
-cspMetaTag.setAttribute('content', "connect-src 'self';")
-document.querySelector('head').appendChild(cspMetaTag)
-
 nav()
 
 exitMessage('iconExit', 'parentMessageRegister')
@@ -45,7 +40,9 @@ for (let i = 0; i < checks.length; i++) {
                     cache: 'no-cache',
                     credentials: 'same-origin',
                     headers: {
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
+                        'Content Security Policy directive': "default-src 'self'"
+
                     },
                     redirect: 'follow',
                     referrerPolicy: 'no-referrer',
@@ -68,7 +65,8 @@ for (let i = 0; i < checks.length; i++) {
                     cache: 'no-cache',
                     credentials: 'same-origin',
                     headers: {
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
+                        'Content Security Policy directive': "default-src 'self'"
                     },
                     redirect: 'follow',
                     referrerPolicy: 'no-referrer',
