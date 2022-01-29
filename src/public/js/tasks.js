@@ -42,7 +42,7 @@ for (let i = 0; i < checks.length; i++) {
                         'Content-Type': 'application/json'
                     },
                     redirect: 'follow',
-                    referrerPolicy: 'no-referrer',
+                    referrerPolicy: 'same-origin',
                 })
             }
 
@@ -65,7 +65,7 @@ for (let i = 0; i < checks.length; i++) {
                         'Content-Type': 'application/json'
                     },
                     redirect: 'follow',
-                    referrerPolicy: 'no-referrer',
+                    referrerPolicy: 'same-origin',
                 })
             }
         }
