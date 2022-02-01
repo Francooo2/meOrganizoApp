@@ -6,7 +6,8 @@ const router = express.Router()
 router.get('/tasks/:id', authController.isLoggedIn, taskController.getTasks, (req, res) => {
     if (req.messageError) {
         res.render('profile', {
-            message: req.messageError
+            message: req.messageError,
+            user   : req.user
         })    
     } else {
         res.render('profile', {

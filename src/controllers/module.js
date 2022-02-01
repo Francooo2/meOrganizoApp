@@ -3,6 +3,11 @@ const pool = require('../../db')
 const getTasks = async (req, res, next) => {
 
     let id  = req.params.id
+
+    if (id !== req.user.id.toString()) {
+        req.messageError = 'Información de tareas no disponible.'
+        return next()
+    }
     
     const sql = 'SELECT * FROM tasks WHERE id_user=?'
     await pool.query(sql, id, (error, results) => {
