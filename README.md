@@ -47,7 +47,7 @@ JWT_COOKIE_EXPIRES = ...
 
 ## Ejecutando el proyecto ⚙️
 
-Para ejecutar el proyecto, luego de completar los pasos anteriores, ejecuta el siguiente comando por conasola, mientrasm tienes XAMPP corriendo.
+Para ejecutar el proyecto, luego de completar los pasos anteriores, ejecuta el siguiente comando por conasola, mientras tienes XAMPP corriendo.
 
 ```
 npm run start
